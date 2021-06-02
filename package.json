@@ -1,0 +1,55 @@
+{
+  "name": "mz-start-config",
+  "version": "1.0.0",
+  "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
+    "clean": "rimraf build/",
+    "build": "yarn clean & npx tsc",
+    "start:prod": "yarn build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write 'src/**/*.ts'",
+    "format:quick": "pretty-quick --staged",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "mohammed elzanaty start config",
+    "react",
+    "nodejs",
+    "typescript",
+    "ts"
+  ],
+  "author": "Mohammed Elzanaty",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedelzanaty/mz-start-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mohammedelzanaty/mz-start-config/issues"
+  },
+  "homepage": "https://github.com/mohammedelzanaty/mz-start-config#readme",
+  "devDependencies": {
+    "@types/node": "^15.6.2",
+    "@types/nodemon": "^1.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}
