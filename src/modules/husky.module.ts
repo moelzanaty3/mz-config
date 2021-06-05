@@ -11,10 +11,10 @@ const createHuskyConfiguration = async (): Promise<void> => {
     )
   )
   await execSync('yarn add -D husky pretty-quick')
+  await execSync('npx husky install')
   await execSync('npm set-script prepare "husky install"')
   await execSync('npm set-script format:quick "pretty-quick --staged"')
-  await execSync('yarn prepare')
-  await execSync('npx husky add .husky/pre-commit "npm run format:quick && npm run lint"')
+  await execSync('npx husky add .husky/pre-commit "npm run format:quick"')
 
   console.group(`I am finished Sir, and Here's Husky Report`)
   console.log('✅ Husky / pretty-quick packages installed')

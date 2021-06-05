@@ -1,18 +1,20 @@
 {
   "name": "mz-start-config",
-  "version": "1.0.1",
+  "version": "1.0.13",
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
-    "build": "npx tsc",
+    "copy:ts": "copyfiles -f src/**/*.json build/config",
+    "clean": "rimraf build",
+    "build": "yarn clean && yarn copy:ts && npx tsc",
     "start:prod": "yarn build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "prepare": "husky install",
-    "format:quick": "format:quick: pretty-quick"
+    "format:quick": "pretty-quick --staged"
   },
   "keywords": [
     "mohammed elzanaty start config",
@@ -44,15 +46,17 @@
     "@types/nodemon": "^1.19.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
-    "eslint": "^7.27.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   }

@@ -27,8 +27,7 @@ const run = async () => {
   console.log(`- .... ${red('😡😡😡😡')}, no Younes`)
 
   try {
-    const { isUsingPrettier, isUsingHusky, isUsingTypeScript, framework, isUsingEslint } =
-      await prompt(questions)
+    const { isUsingPrettier, isUsingTypeScript, framework, isUsingEslint } = await prompt(questions)
     if (isUsingTypeScript) {
       await createTypeScriptFile(framework as string)
     }
@@ -38,10 +37,7 @@ const run = async () => {
     if (isUsingEslint) {
       await createEslintConfiguration(framework as string)
     }
-    if (isUsingHusky) {
-      await createHuskyConfiguration()
-    }
-    if (!isUsingPrettier && !isUsingTypeScript && !isUsingHusky) {
+    if (!isUsingPrettier && !isUsingTypeScript) {
       console.log(
         red(`Sorry Sir, ${blue(bold(`${constants.username}`))}...I wish to help you 😂💔 `)
       )

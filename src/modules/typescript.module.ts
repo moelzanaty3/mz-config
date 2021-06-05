@@ -22,7 +22,7 @@ const createTypeScriptFile = async (framework: string) => {
     )
   )
 
-  const configFolderPath = path.join(constants.appRoot, 'src', 'config')
+  const configFolderPath = path.join(constants.appRoot, 'config')
   // get path's for all frameworks typescript config
   const frameworksConfigFiles: Frameworks =
     (await utils.getConfigFiles(configFolderPath)) || ({} as Frameworks)
@@ -74,7 +74,3 @@ const createTypeScriptFile = async (framework: string) => {
 }
 
 export default createTypeScriptFile
-function appRoot(appRoot: any, arg1: string, arg2: string) {
-  throw new Error('Function not implemented.')
-}
-

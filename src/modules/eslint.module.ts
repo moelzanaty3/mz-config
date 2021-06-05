@@ -19,7 +19,7 @@ const createEslintConfiguration = async (framework: string) => {
   if (framework === 'node') {
     await execSync('yarn add -D eslint eslint-config-prettier eslint-plugin-prettier')
     const eslintjs: string = path.join(process.cwd(), '.eslintrc.json')
-    const configFolderPath = path.join(process.cwd(), 'src', 'config')
+    const configFolderPath = path.join(constants.appRoot, 'config')
     const eslintConfigBuffer: Buffer = await fse.readFile(
       path.join(configFolderPath, 'eslint-config-node-ts.json')
     )

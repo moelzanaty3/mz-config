@@ -3,7 +3,7 @@ import { bold, green } from 'chalk'
 interface Answer {
   isUsingTypeScript: string
   isUsingPrettier: string
-  isUsingHusky: string
+  isUsingHusky?: string
   isUsingEslint?: string
   framework?: string
 }
@@ -15,14 +15,14 @@ const questions = [
     default: true,
     name: 'isUsingPrettier'
   },
-  {
-    type: 'confirm',
-    message: `${bold('Sir')},  ${green(
-      'Do you need husky to improve your commits and more 🐶 woof!⁉️'
-    )}`,
-    default: false,
-    name: 'isUsingHusky'
-  },
+  // {
+  //   type: 'confirm',
+  //   message: `${bold('Sir')},  ${green(
+  //     'Do you need husky to improve your commits and more 🐶 woof!⁉️'
+  //   )}`,
+  //   default: false,
+  //   name: 'isUsingHusky'
+  // },
   {
     type: 'confirm',
     message: `${bold('Sir')}, ${green('Do you use typescript ⁉️')}`,
@@ -31,7 +31,7 @@ const questions = [
   },
   {
     type: 'list',
-    message: `${bold('Sir')}, ${green('Pick the framework you are using: ⁉️')}`,
+    message: `${bold('Sir')}, ${green('Pick the framework to generate tsconfig.json for you: ⁉️')}`,
     name: 'framework',
     choices: ['react', 'node', 'nextjs'],
     when: (answers: Answer) => answers.isUsingTypeScript
