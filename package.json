@@ -1,6 +1,6 @@
 {
-  "name": "mz-start-config",
-  "version": "1.0.13",
+  "name": "mz-config",
+  "version": "0.0.1",
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
