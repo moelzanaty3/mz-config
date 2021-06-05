@@ -127,3 +127,5 @@ build/
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 .DS_Store
+
+# npm config set registry http://registry.npmjs.org
